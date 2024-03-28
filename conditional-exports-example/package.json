@@ -1,0 +1,10 @@
+{
+  "name": "conditional-exports-example",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "react-server": "./src/hello.server.ts",
+      "default": "./src/hello.client.ts"
+    }
+  }
+}

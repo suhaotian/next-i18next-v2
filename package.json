@@ -1,0 +1,52 @@
+{
+  "name": "next-i18next-v2-monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Demo code",
+  "scripts": {
+    "dev": "pnpm -r dev",
+    "checktype": "pnpm -r checktype",
+    "push": "git push && git lfs push --all origin",
+    "prepare": "is-ci ||  husky"
+  },
+  "devDependencies": {
+    "husky": "^9.0.7",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "is-ci": "^3.0.1",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.13",
+    "eslint-config-universe": "^12.0.0",
+    "@tsconfig/recommended": "^1.0.3",
+    "lfs-auto-track": "^1.1.0"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSameLine": true
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-universe",
+    "ignorePatterns": [
+      "node_modules"
+    ]
+  },
+  "lint-staged": {
+    "*": [
+      "lfs-auto-track 'image,video,audio:100kb;*:1024kb'"
+    ],
+    "*.{ts,tsx,mts}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,css,js,mjs}": [
+      "prettier --write"
+    ]
+  },
+  "files": [],
+  "keywords": [],
+  "author": "suhaotian",
+  "license": "MIT"
+}
